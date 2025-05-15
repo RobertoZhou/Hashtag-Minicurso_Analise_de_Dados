@@ -12,7 +12,15 @@ tabela = pd.read_csv("ClientesBanco.csv", encoding="latin-1")
 
 tabela = tabela.drop("CLIENTNUM", axis=1)
 
-print(tabela.info())
+#   Agora vamos tratar valores vazios e exibir um resumo das colunas da base de dados
+tabela = tabela.dropna()
 
+print(tabela.info())
 print(tabela.describe().round(1))
 
+#   Vamos avaliar como está a diviso entre Clientes x Cancelados
+qtde_categoria = tabela["Categoria"].value_counts()
+print(qtde_categoria)
+
+qtde_percentual = tabela["Categoria"].value_counts(normalize=True)
+print(qtde_percentual)
