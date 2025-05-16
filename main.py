@@ -27,10 +27,11 @@ print(qtde_categoria)
 qtde_percentual = tabela["Categoria"].value_counts(normalize=True)
 print(qtde_percentual)
 
+print("=" * 25)
 
 #   Temos várias formas de descobrir o motivo de cancelamento
 #       - Podemos olhar a comparação entre Clientes e Cancelados em cada uma das colunas da nossa base de dados, para ver se essa informação traz algum insight novo para a gente
 
-#   Criando Gráfico
-grafico = px.histogram(tabela, x="Idade", color="Categoria")
-print(grafico.show())
+for coluna in tabela:
+    grafico = px.histogram(tabela, x=coluna, color="Categoria")
+    print(grafico.show())
