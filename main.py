@@ -35,3 +35,8 @@ print("=" * 25)
 for coluna in tabela:
     grafico = px.histogram(tabela, x=coluna, color="Categoria")
     print(grafico.show())
+
+#   Informaçôes retiradas da análise:
+#       - Me parece que quanto mais produtos contratados um cliente tem, menor a chance dele cancelar
+#       - E quanto mais transaçôes e quanto maior o valor de transação, menor a chance dele cancelar
+#       - Quanto maior a quantidade de contatos que a pessoa teve que fazer, maior a chance dela cancelar
